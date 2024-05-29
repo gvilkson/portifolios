@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+    
+    <section class="home-about-area" style="margin-top: 20vh; margin-bottom: 20vh;">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 no-padding home-about-left">
+                    <img class="img-fluid" src="" alt="Imagem de Logout">
+                </div>
+                <div class="col-lg-6 no-padding home-about-right">
+                    <h1>Você foi deslogado</h1>
+                    <p>
+                        <span>Esperamos vê-lo novamente em breve!</span>
+                    </p>
+                    <p>
+                        Você saiu da sua conta com sucesso. Aproveite para explorar mais ou voltar para a página inicial.
+                    </p>
+                    <a class="text-uppercase primary-btn" href="{% url 'index' %}">Voltar para Home</a>
+                    <a class="text-uppercase primary-btn" href="{% url 'login' %}">Fazer Login</a>
+                    <a class="text-uppercase primary-btn" href="{% url 'accounts:register' %}">Criar uma Conta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "landing/partials/footer.html" %}
+
+{% endblock content %}

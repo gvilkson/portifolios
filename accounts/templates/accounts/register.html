@@ -1,0 +1,76 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-12 no-padding home-about-left text-center">
+                <img class="img-fluid" src="{% static 'img/register-img.png' %}" alt="Imagem de Registro">
+            </div>
+            <div class="col-lg-6 col-md-12 no-padding home-about-right">
+                <div class="form-container mx-auto">
+                    <h2>Registrar</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                            <div class="error-message">{{ form.non_field_errors }}</div>
+                        {% endif %}
+                        <table class="table table-borderless">
+                            {% for field in form %}
+                                <tr>
+                                    <td>{{ field.label_tag }}</td>
+                                    <td>
+                                        {{ field }}
+                                        {% if field.errors %}
+                                            <div class="error-message">{{ field.errors }}</div>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .home-about-area {
+        padding: 60px 0;
+    }
+    .form-container {
+        max-width: 100%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background-color: #fff;
+        margin: 20px 0;
+    }
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .table td {
+        padding: 10px;
+    }
+    .error-message {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    .btn {
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock content %}
