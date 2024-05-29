@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Thirds Apps --------------------------
     'core',
     'accounts',
+    'portifolio',
 ]
 
 MIDDLEWARE = [
