@@ -128,8 +128,4 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Configurações Mercado Pago
-MERCADO_PAGO_CLIENT_ID = 'seu_client_id'
-MERCADO_PAGO_CLIENT_SECRET = 'seu_client_secret'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
